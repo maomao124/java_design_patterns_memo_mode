@@ -19,5 +19,21 @@ public class Test
     {
         GameRole gameRole = new GameRole();
         gameRole.stateDisplay();
+        RoleStateMemento roleStateMemento = gameRole.saveState();
+        RoleStateCaretaker roleStateCaretaker = new RoleStateCaretaker();
+        roleStateCaretaker.setRoleStateMemento(roleStateMemento);
+        System.out.println("------------");
+        gameRole.fight();
+        gameRole.stateDisplay();
+        System.out.println("------------");
+        gameRole.fight();
+        gameRole.stateDisplay();
+        System.out.println("------------");
+        gameRole.fight();
+        gameRole.stateDisplay();
+        System.out.println("------------");
+        //恢复
+        gameRole.recoverState(roleStateCaretaker.getRoleStateMemento());
+        gameRole.stateDisplay();
     }
 }

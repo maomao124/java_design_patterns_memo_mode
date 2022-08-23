@@ -1,6 +1,5 @@
 package mao.white_box;
 
-import java.util.Random;
 
 /**
  * Project name(项目名称)：java设计模式_备忘录模式
